@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 class Category(models.Model):
-    cate_name = models.CharField(max_length=50, unique=True)
-    slug = models.CharField(max_length=100, unique=True)
+    cate_name = models.CharField(max_length=50, unique=True, verbose_name='Category name')
+    slug = models.SlugField(max_length=100, unique=True)
     desc = models.TextField(max_length=500, blank=True)
     cate_img = models.ImageField(upload_to='photos/categories', blank=True)
     
